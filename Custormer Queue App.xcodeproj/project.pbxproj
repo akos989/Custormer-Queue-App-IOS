@@ -1,0 +1,759 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F213EC12920273800FFD0AB /* NotificationEnableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F213EC02920273700FFD0AB /* NotificationEnableView.swift */; };
+		0F95BEB0291111210039D4FC /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F95BEAF291111200039D4FC /* UserDefaults+Extension.swift */; };
+		0F95BEB3291116B70039D4FC /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F95BEB2291116B70039D4FC /* AppConstants.swift */; };
+		0FAACFA42906803E001DC506 /* servicetypes.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FAACFA32906803E001DC506 /* servicetypes.json */; };
+		0FAACFA7290680C8001DC506 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAACFA6290680C8001DC506 /* Bundle+Extension.swift */; };
+		0FAACFA9290689CD001DC506 /* ServiceTypesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAACFA8290689CD001DC506 /* ServiceTypesScreen.swift */; };
+		0FAACFAB29069B6F001DC506 /* CustomerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAACFAA29069B6E001DC506 /* CustomerService.swift */; };
+		0FC5FFBB2905C78E00E7A526 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 0FC5FFBA2905C78E00E7A526 /* CodeScanner */; };
+		0FC5FFBD2905D01800E7A526 /* WelcomeScreen-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5FFBC2905D01800E7A526 /* WelcomeScreen-ViewModel.swift */; };
+		0FC5FFC02905D86000E7A526 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5FFBF2905D86000E7A526 /* NetworkService.swift */; };
+		0FC5FFC22905DD1000E7A526 /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5FFC12905DD1000E7A526 /* ServiceType.swift */; };
+		0FCE82FD2907E5AC00120324 /* ServiceTypesScreen-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCE82FC2907E5AC00120324 /* ServiceTypesScreen-ViewModel.swift */; };
+		0FCE82FF2907E8C800120324 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCE82FE2907E8C800120324 /* CardView.swift */; };
+		0FD2FB0F290FDFC000E4A357 /* WaitingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2FB0E290FDFC000E4A357 /* WaitingScreen.swift */; };
+		0FD2FB11290FED5500E4A357 /* DelayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2FB10290FED5500E4A357 /* DelayScreen.swift */; };
+		0FD2FB13290FF60200E4A357 /* WaitingScreen-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2FB12290FF60100E4A357 /* WaitingScreen-ViewModel.swift */; };
+		0FD2FB15290FF71E00E4A357 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2FB14290FF71E00E4A357 /* Ticket.swift */; };
+		0FD2FB172910017D00E4A357 /* ticket-nodesk.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FD2FB162910017D00E4A357 /* ticket-nodesk.json */; };
+		0FD2FB192910022F00E4A357 /* ticket-desk.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FD2FB182910022F00E4A357 /* ticket-desk.json */; };
+		0FD2FB1B2910069E00E4A357 /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2FB1A2910069D00E4A357 /* NavigationService.swift */; };
+		0FF336F72905B82A00C75E40 /* Custormer_Queue_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF336F62905B82A00C75E40 /* Custormer_Queue_AppApp.swift */; };
+		0FF336F92905B82A00C75E40 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF336F82905B82A00C75E40 /* WelcomeScreen.swift */; };
+		0FF336FB2905B83700C75E40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF336FA2905B83700C75E40 /* Assets.xcassets */; };
+		0FF336FE2905B83700C75E40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF336FD2905B83700C75E40 /* Preview Assets.xcassets */; };
+		0FF337082905B83900C75E40 /* Custormer_Queue_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF337072905B83900C75E40 /* Custormer_Queue_AppTests.swift */; };
+		0FF337122905B83900C75E40 /* Custormer_Queue_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF337112905B83900C75E40 /* Custormer_Queue_AppUITests.swift */; };
+		0FF337142905B83900C75E40 /* Custormer_Queue_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF337132905B83900C75E40 /* Custormer_Queue_AppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0FF337042905B83900C75E40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0FF336EB2905B82A00C75E40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0FF336F22905B82A00C75E40;
+			remoteInfo = "Custormer Queue App";
+		};
+		0FF3370E2905B83900C75E40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0FF336EB2905B82A00C75E40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0FF336F22905B82A00C75E40;
+			remoteInfo = "Custormer Queue App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F213EC02920273700FFD0AB /* NotificationEnableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationEnableView.swift; sourceTree = "<group>"; };
+		0F95BEAF291111200039D4FC /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		0F95BEB2291116B70039D4FC /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		0FAACFA32906803E001DC506 /* servicetypes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = servicetypes.json; sourceTree = "<group>"; };
+		0FAACFA6290680C8001DC506 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		0FAACFA8290689CD001DC506 /* ServiceTypesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTypesScreen.swift; sourceTree = "<group>"; };
+		0FAACFAA29069B6E001DC506 /* CustomerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerService.swift; sourceTree = "<group>"; };
+		0FC5FFBC2905D01800E7A526 /* WelcomeScreen-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeScreen-ViewModel.swift"; sourceTree = "<group>"; };
+		0FC5FFBF2905D86000E7A526 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		0FC5FFC12905DD1000E7A526 /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
+		0FCE82FC2907E5AC00120324 /* ServiceTypesScreen-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceTypesScreen-ViewModel.swift"; sourceTree = "<group>"; };
+		0FCE82FE2907E8C800120324 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		0FD2FB0E290FDFC000E4A357 /* WaitingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingScreen.swift; sourceTree = "<group>"; };
+		0FD2FB10290FED5500E4A357 /* DelayScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayScreen.swift; sourceTree = "<group>"; };
+		0FD2FB12290FF60100E4A357 /* WaitingScreen-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WaitingScreen-ViewModel.swift"; sourceTree = "<group>"; };
+		0FD2FB14290FF71E00E4A357 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		0FD2FB162910017D00E4A357 /* ticket-nodesk.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "ticket-nodesk.json"; sourceTree = "<group>"; };
+		0FD2FB182910022F00E4A357 /* ticket-desk.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "ticket-desk.json"; sourceTree = "<group>"; };
+		0FD2FB1A2910069D00E4A357 /* NavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
+		0FF336F32905B82A00C75E40 /* Custormer Queue App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custormer Queue App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FF336F62905B82A00C75E40 /* Custormer_Queue_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custormer_Queue_AppApp.swift; sourceTree = "<group>"; };
+		0FF336F82905B82A00C75E40 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
+		0FF336FA2905B83700C75E40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0FF336FD2905B83700C75E40 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0FF337032905B83900C75E40 /* Custormer Queue AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Custormer Queue AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FF337072905B83900C75E40 /* Custormer_Queue_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custormer_Queue_AppTests.swift; sourceTree = "<group>"; };
+		0FF3370D2905B83900C75E40 /* Custormer Queue AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Custormer Queue AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FF337112905B83900C75E40 /* Custormer_Queue_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custormer_Queue_AppUITests.swift; sourceTree = "<group>"; };
+		0FF337132905B83900C75E40 /* Custormer_Queue_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custormer_Queue_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0FF336F02905B82A00C75E40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FC5FFBB2905C78E00E7A526 /* CodeScanner in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FF337002905B83900C75E40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FF3370A2905B83900C75E40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F95BEB12911169F0039D4FC /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0F95BEB2291116B70039D4FC /* AppConstants.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		0FAACFA129067FED001DC506 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0FAACFA229067FF3001DC506 /* Example Responses */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		0FAACFA229067FF3001DC506 /* Example Responses */ = {
+			isa = PBXGroup;
+			children = (
+				0FAACFA32906803E001DC506 /* servicetypes.json */,
+				0FD2FB162910017D00E4A357 /* ticket-nodesk.json */,
+				0FD2FB182910022F00E4A357 /* ticket-desk.json */,
+			);
+			path = "Example Responses";
+			sourceTree = "<group>";
+		};
+		0FAACFA529068094001DC506 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0FAACFA6290680C8001DC506 /* Bundle+Extension.swift */,
+				0F95BEAF291111200039D4FC /* UserDefaults+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0FC5FFBE2905D7A200E7A526 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0FC5FFBF2905D86000E7A526 /* NetworkService.swift */,
+				0FD2FB1A2910069D00E4A357 /* NavigationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0FF336EA2905B82A00C75E40 = {
+			isa = PBXGroup;
+			children = (
+				0FF336F52905B82A00C75E40 /* Custormer Queue App */,
+				0FF337062905B83900C75E40 /* Custormer Queue AppTests */,
+				0FF337102905B83900C75E40 /* Custormer Queue AppUITests */,
+				0FF336F42905B82A00C75E40 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0FF336F42905B82A00C75E40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0FF336F32905B82A00C75E40 /* Custormer Queue App.app */,
+				0FF337032905B83900C75E40 /* Custormer Queue AppTests.xctest */,
+				0FF3370D2905B83900C75E40 /* Custormer Queue AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0FF336F52905B82A00C75E40 /* Custormer Queue App */ = {
+			isa = PBXGroup;
+			children = (
+				0F95BEB12911169F0039D4FC /* Shared */,
+				0FAACFA529068094001DC506 /* Extensions */,
+				0FAACFA129067FED001DC506 /* Data */,
+				0FF337222905BE8B00C75E40 /* Model */,
+				0FF337202905BE7800C75E40 /* View */,
+				0FF337212905BE7F00C75E40 /* ViewModel */,
+				0FC5FFBE2905D7A200E7A526 /* Service */,
+				0FF336F62905B82A00C75E40 /* Custormer_Queue_AppApp.swift */,
+				0FF336FA2905B83700C75E40 /* Assets.xcassets */,
+				0FF336FC2905B83700C75E40 /* Preview Content */,
+			);
+			path = "Custormer Queue App";
+			sourceTree = "<group>";
+		};
+		0FF336FC2905B83700C75E40 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0FF336FD2905B83700C75E40 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0FF337062905B83900C75E40 /* Custormer Queue AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				0FF337072905B83900C75E40 /* Custormer_Queue_AppTests.swift */,
+			);
+			path = "Custormer Queue AppTests";
+			sourceTree = "<group>";
+		};
+		0FF337102905B83900C75E40 /* Custormer Queue AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0FF337112905B83900C75E40 /* Custormer_Queue_AppUITests.swift */,
+				0FF337132905B83900C75E40 /* Custormer_Queue_AppUITestsLaunchTests.swift */,
+			);
+			path = "Custormer Queue AppUITests";
+			sourceTree = "<group>";
+		};
+		0FF337202905BE7800C75E40 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0FF336F82905B82A00C75E40 /* WelcomeScreen.swift */,
+				0FAACFA8290689CD001DC506 /* ServiceTypesScreen.swift */,
+				0FCE82FE2907E8C800120324 /* CardView.swift */,
+				0FD2FB0E290FDFC000E4A357 /* WaitingScreen.swift */,
+				0FD2FB10290FED5500E4A357 /* DelayScreen.swift */,
+				0F213EC02920273700FFD0AB /* NotificationEnableView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0FF337212905BE7F00C75E40 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0FC5FFBC2905D01800E7A526 /* WelcomeScreen-ViewModel.swift */,
+				0FCE82FC2907E5AC00120324 /* ServiceTypesScreen-ViewModel.swift */,
+				0FD2FB12290FF60100E4A357 /* WaitingScreen-ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0FF337222905BE8B00C75E40 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0FC5FFC12905DD1000E7A526 /* ServiceType.swift */,
+				0FAACFAA29069B6E001DC506 /* CustomerService.swift */,
+				0FD2FB14290FF71E00E4A357 /* Ticket.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0FF336F22905B82A00C75E40 /* Custormer Queue App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FF337172905B83900C75E40 /* Build configuration list for PBXNativeTarget "Custormer Queue App" */;
+			buildPhases = (
+				0FF336EF2905B82A00C75E40 /* Sources */,
+				0FF336F02905B82A00C75E40 /* Frameworks */,
+				0FF336F12905B82A00C75E40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Custormer Queue App";
+			packageProductDependencies = (
+				0FC5FFBA2905C78E00E7A526 /* CodeScanner */,
+			);
+			productName = "Custormer Queue App";
+			productReference = 0FF336F32905B82A00C75E40 /* Custormer Queue App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0FF337022905B83900C75E40 /* Custormer Queue AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FF3371A2905B83900C75E40 /* Build configuration list for PBXNativeTarget "Custormer Queue AppTests" */;
+			buildPhases = (
+				0FF336FF2905B83900C75E40 /* Sources */,
+				0FF337002905B83900C75E40 /* Frameworks */,
+				0FF337012905B83900C75E40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0FF337052905B83900C75E40 /* PBXTargetDependency */,
+			);
+			name = "Custormer Queue AppTests";
+			productName = "Custormer Queue AppTests";
+			productReference = 0FF337032905B83900C75E40 /* Custormer Queue AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0FF3370C2905B83900C75E40 /* Custormer Queue AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FF3371D2905B83900C75E40 /* Build configuration list for PBXNativeTarget "Custormer Queue AppUITests" */;
+			buildPhases = (
+				0FF337092905B83900C75E40 /* Sources */,
+				0FF3370A2905B83900C75E40 /* Frameworks */,
+				0FF3370B2905B83900C75E40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0FF3370F2905B83900C75E40 /* PBXTargetDependency */,
+			);
+			name = "Custormer Queue AppUITests";
+			productName = "Custormer Queue AppUITests";
+			productReference = 0FF3370D2905B83900C75E40 /* Custormer Queue AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0FF336EB2905B82A00C75E40 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					0FF336F22905B82A00C75E40 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					0FF337022905B83900C75E40 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 0FF336F22905B82A00C75E40;
+					};
+					0FF3370C2905B83900C75E40 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 0FF336F22905B82A00C75E40;
+					};
+				};
+			};
+			buildConfigurationList = 0FF336EE2905B82A00C75E40 /* Build configuration list for PBXProject "Custormer Queue App" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0FF336EA2905B82A00C75E40;
+			packageReferences = (
+				0FC5FFB92905C78E00E7A526 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
+			productRefGroup = 0FF336F42905B82A00C75E40 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0FF336F22905B82A00C75E40 /* Custormer Queue App */,
+				0FF337022905B83900C75E40 /* Custormer Queue AppTests */,
+				0FF3370C2905B83900C75E40 /* Custormer Queue AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0FF336F12905B82A00C75E40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FF336FE2905B83700C75E40 /* Preview Assets.xcassets in Resources */,
+				0FAACFA42906803E001DC506 /* servicetypes.json in Resources */,
+				0FD2FB192910022F00E4A357 /* ticket-desk.json in Resources */,
+				0FD2FB172910017D00E4A357 /* ticket-nodesk.json in Resources */,
+				0FF336FB2905B83700C75E40 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FF337012905B83900C75E40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FF3370B2905B83900C75E40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0FF336EF2905B82A00C75E40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FCE82FD2907E5AC00120324 /* ServiceTypesScreen-ViewModel.swift in Sources */,
+				0F95BEB3291116B70039D4FC /* AppConstants.swift in Sources */,
+				0FC5FFC22905DD1000E7A526 /* ServiceType.swift in Sources */,
+				0FAACFA7290680C8001DC506 /* Bundle+Extension.swift in Sources */,
+				0FD2FB11290FED5500E4A357 /* DelayScreen.swift in Sources */,
+				0FD2FB0F290FDFC000E4A357 /* WaitingScreen.swift in Sources */,
+				0F213EC12920273800FFD0AB /* NotificationEnableView.swift in Sources */,
+				0FD2FB15290FF71E00E4A357 /* Ticket.swift in Sources */,
+				0F95BEB0291111210039D4FC /* UserDefaults+Extension.swift in Sources */,
+				0FF336F92905B82A00C75E40 /* WelcomeScreen.swift in Sources */,
+				0FCE82FF2907E8C800120324 /* CardView.swift in Sources */,
+				0FAACFAB29069B6F001DC506 /* CustomerService.swift in Sources */,
+				0FC5FFBD2905D01800E7A526 /* WelcomeScreen-ViewModel.swift in Sources */,
+				0FD2FB1B2910069E00E4A357 /* NavigationService.swift in Sources */,
+				0FD2FB13290FF60200E4A357 /* WaitingScreen-ViewModel.swift in Sources */,
+				0FC5FFC02905D86000E7A526 /* NetworkService.swift in Sources */,
+				0FAACFA9290689CD001DC506 /* ServiceTypesScreen.swift in Sources */,
+				0FF336F72905B82A00C75E40 /* Custormer_Queue_AppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FF336FF2905B83900C75E40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FF337082905B83900C75E40 /* Custormer_Queue_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FF337092905B83900C75E40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FF337122905B83900C75E40 /* Custormer_Queue_AppUITests.swift in Sources */,
+				0FF337142905B83900C75E40 /* Custormer_Queue_AppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0FF337052905B83900C75E40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0FF336F22905B82A00C75E40 /* Custormer Queue App */;
+			targetProxy = 0FF337042905B83900C75E40 /* PBXContainerItemProxy */;
+		};
+		0FF3370F2905B83900C75E40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0FF336F22905B82A00C75E40 /* Custormer Queue App */;
+			targetProxy = 0FF3370E2905B83900C75E40 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0FF337152905B83900C75E40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0FF337162905B83900C75E40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0FF337182905B83900C75E40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Custormer Queue App/Preview Content\"";
+				DEVELOPMENT_TEAM = UMLAGLZ8L9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to scan QR codes.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.morvai.Custormer-Queue-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0FF337192905B83900C75E40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Custormer Queue App/Preview Content\"";
+				DEVELOPMENT_TEAM = UMLAGLZ8L9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to scan QR codes.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.morvai.Custormer-Queue-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0FF3371B2905B83900C75E40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UMLAGLZ8L9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.morvai.Custormer-Queue-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Custormer Queue App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Custormer Queue App";
+			};
+			name = Debug;
+		};
+		0FF3371C2905B83900C75E40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UMLAGLZ8L9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.morvai.Custormer-Queue-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Custormer Queue App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Custormer Queue App";
+			};
+			name = Release;
+		};
+		0FF3371E2905B83900C75E40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UMLAGLZ8L9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.morvai.Custormer-Queue-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Custormer Queue App";
+			};
+			name = Debug;
+		};
+		0FF3371F2905B83900C75E40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UMLAGLZ8L9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.morvai.Custormer-Queue-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Custormer Queue App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0FF336EE2905B82A00C75E40 /* Build configuration list for PBXProject "Custormer Queue App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FF337152905B83900C75E40 /* Debug */,
+				0FF337162905B83900C75E40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FF337172905B83900C75E40 /* Build configuration list for PBXNativeTarget "Custormer Queue App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FF337182905B83900C75E40 /* Debug */,
+				0FF337192905B83900C75E40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FF3371A2905B83900C75E40 /* Build configuration list for PBXNativeTarget "Custormer Queue AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FF3371B2905B83900C75E40 /* Debug */,
+				0FF3371C2905B83900C75E40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FF3371D2905B83900C75E40 /* Build configuration list for PBXNativeTarget "Custormer Queue AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FF3371E2905B83900C75E40 /* Debug */,
+				0FF3371F2905B83900C75E40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0FC5FFB92905C78E00E7A526 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0FC5FFBA2905C78E00E7A526 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FC5FFB92905C78E00E7A526 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 0FF336EB2905B82A00C75E40 /* Project object */;
+}

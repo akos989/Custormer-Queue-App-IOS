@@ -1,0 +1,31 @@
+{
+    "name": "Vodafone Corvin Plaza",
+    "waitingNumber": 12,
+    "waitingDuration": 45,
+    "serviceTypes": [
+        {
+            "id": "aa5b34bb-07b2-4aa4-abe3-3173b69696c2",
+            "title": "Upload balance"
+        },
+        {
+            "id": "ba5b34bb-07b2-4aa4-abe3-3173b60696c2",
+            "title": "Buy new device"
+        },
+        {
+            "id": "ca5b34bb-07b2-4aa4-abe3-3173b69696c2",
+            "title": "Change name for service"
+        },
+        {
+            "id": "da5b34bb-07b2-4aa4-abe3-3173b69696c2",
+            "title": "Home internet"
+        },
+        {
+            "id": "ea5b34bb-07b2-4aa4-abe3-3173b69696c2",
+            "title": "Mobile network services"
+        },
+        {
+            "id": "fa5b34bb-07b2-4aa4-abe3-3173b69696c2",
+            "title": "Just for fun"
+        }
+    ]
+}
