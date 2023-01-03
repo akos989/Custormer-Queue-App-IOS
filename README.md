@@ -6,6 +6,18 @@ Time is a very important aspect of our life, therefore we try to waste as little
 
 This application plans to provide a smart online tool which companies can use to at their customer services. Though the app users can scan the QR code of the customer service, choose a service type and getting a waiting ticket while being aware of the waiting time. After getting the ticket the application updates in real time if the waiting times on the server changes, and sends notification to the user if their ticket is being called.
 
+## Techniques
+  - SwiftUI
+  - MVVM
+  - IOS 16 NavigationStack
+  - UNNotification
+  - Central error handling ViewModifier with singleton ErrorHandlerService
+  - Custom animations
+  - URLSession with async/await
+  - UserDefaults
+
+  
+
 ## Screenshots
 ### Welcome screen
 
