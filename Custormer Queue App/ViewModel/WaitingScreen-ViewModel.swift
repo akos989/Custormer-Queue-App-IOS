@@ -35,10 +35,10 @@ extension WaitingScreen {
                     
                     if let remainingMinutes = remainingMinutes {
                         if remainingMinutes > 5 * 60 {
-                            scheduleLocalNotificationAfter(minutes: Double(remainingMinutes - 5), title: "5 minutes left till call", subtitle: "Your ticket is soon being called, please update the time in the application to see exact call time.", notificationId: "9d8d3a5f-505f-4dd8-927d-40dc919705cd")
+                            scheduleLocalNotificationAfter(minutes: Double(remainingMinutes - 5), title: "5 minutes left till call", subtitle: "Your ticket is soon being called, please update the time in the application to see exact call time.", notificationId: AppConstants.NOTIFICATION_ID)
                         }
                         if remainingMinutes > 0 {
-                            scheduleLocalNotificationAfter(minutes: Double(remainingMinutes), title: "Ticket time is up", subtitle: "Your ticket is being called, go to the given desk.", notificationId: "c2f4f569-0dbd-48cc-9413-d857eeebb6f6")
+                            scheduleLocalNotificationAfter(minutes: Double(remainingMinutes), title: "Ticket time is up", subtitle: "Your ticket is being called, go to the given desk.", notificationId: AppConstants.NOTIFICATION_ID)
                         }
                     }
                 } else {
@@ -119,13 +119,10 @@ extension WaitingScreen {
                 content.subtitle = subtitle
                 content.sound = UNNotificationSound.default
                 
-                // show this notification five seconds from now
                 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: minutes, repeats: false)
                 
-                // choose a random identifier
                 let request = UNNotificationRequest(identifier: notificationId, content: content, trigger: trigger)
                 
-                // add our notification request
                 UNUserNotificationCenter.current().add(request)
             }
             
@@ -136,8 +133,6 @@ extension WaitingScreen {
                     center.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
                         if success {
                             addRequest()
-                        } else {
-                            print("D'oh")
                         }
                     }
                 }

@@ -112,47 +112,4 @@ class NetworkService {
             }
         }
     }
-    
-    private class FakeURLSession {
-        static func data(from fromUrl: URL) async throws -> (Data, URLResponse) {
-            try await Task.sleep(nanoseconds: 2_000_000_000)
-            
-            let contollerPathComponent = fromUrl.pathComponents[2]
-            
-            switch contollerPathComponent {
-                case "list":
-                    guard let url = Bundle.main.url(forResource: "servicetypes", withExtension: "json") else {
-                        fatalError("Failed to locate servicetypes.json in bundle.")
-                    }
-                    
-                    guard let data = try? Data(contentsOf: url) else {
-                        fatalError("Failed to load \(contollerPathComponent) from bundle.")
-                    }
-                    return (data, URLResponse())
-                    
-                case "getTicket":
-                    guard let url = Bundle.main.url(forResource: "ticket-nodesk", withExtension: "json") else {
-                        fatalError("Failed to locate ticket-nodesk.json in bundle.")
-                    }
-                    
-                    guard let data = try? Data(contentsOf: url) else {
-                        fatalError("Failed to load ticket-nodesk.json from bundle.")
-                    }
-                    return (data, URLResponse())
-                    
-                case "delayTicket":
-                    guard let url = Bundle.main.url(forResource: "ticket-nodesk", withExtension: "json") else {
-                        fatalError("Failed to locate ticket-nodesk.json in bundle.")
-                    }
-                    
-                    guard let data = try? Data(contentsOf: url) else {
-                        fatalError("Failed to load ticket-nodesk.json from bundle.")
-                    }
-                    return (data, URLResponse())
-                    
-                default:
-                    return (Data(), URLResponse())
-            }
-        }
-    }
 }

@@ -7,26 +7,6 @@
 
 import SwiftUI
 
-struct ErrorCard: Identifiable {
-    let id: UUID
-    var offset: CGSize
-    var message: String
-    let timeToLive: Int
-    
-    init(id: UUID = UUID(), offset: CGSize, message: String, timeToLive: Int = 7, onTimerEnded: @escaping () -> Void) {
-        self.id = id
-        self.offset = offset
-        self.message = message
-        self.timeToLive = timeToLive
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.seconds(timeToLive)) {
-            Task { @MainActor in
-                onTimerEnded()
-            }
-        }
-    }
-}
-
 struct ErrorHandler: ViewModifier {
     @Binding var errorMessages: [String]
     @State private var errorCards = [ErrorCard]()

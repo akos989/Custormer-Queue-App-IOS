@@ -16,6 +16,7 @@
 		0FAACFA7290680C8001DC506 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAACFA6290680C8001DC506 /* Bundle+Extension.swift */; };
 		0FAACFA9290689CD001DC506 /* ServiceTypesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAACFA8290689CD001DC506 /* ServiceTypesScreen.swift */; };
 		0FAACFAB29069B6F001DC506 /* CustomerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAACFAA29069B6E001DC506 /* CustomerService.swift */; };
+		0FB42D1729645CB1008235DD /* ErrorCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB42D1629645CB1008235DD /* ErrorCard.swift */; };
 		0FC5FFBB2905C78E00E7A526 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 0FC5FFBA2905C78E00E7A526 /* CodeScanner */; };
 		0FC5FFBD2905D01800E7A526 /* WelcomeScreen-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5FFBC2905D01800E7A526 /* WelcomeScreen-ViewModel.swift */; };
 		0FC5FFC02905D86000E7A526 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5FFBF2905D86000E7A526 /* NetworkService.swift */; };
@@ -70,6 +71,7 @@
 		0FAACFA6290680C8001DC506 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		0FAACFA8290689CD001DC506 /* ServiceTypesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTypesScreen.swift; sourceTree = "<group>"; };
 		0FAACFAA29069B6E001DC506 /* CustomerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerService.swift; sourceTree = "<group>"; };
+		0FB42D1629645CB1008235DD /* ErrorCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCard.swift; sourceTree = "<group>"; };
 		0FC5FFBC2905D01800E7A526 /* WelcomeScreen-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeScreen-ViewModel.swift"; sourceTree = "<group>"; };
 		0FC5FFBF2905D86000E7A526 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0FC5FFC12905DD1000E7A526 /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				0FC5FFC12905DD1000E7A526 /* ServiceType.swift */,
 				0FAACFAA29069B6E001DC506 /* CustomerService.swift */,
 				0FD2FB14290FF71E00E4A357 /* Ticket.swift */,
+				0FB42D1629645CB1008235DD /* ErrorCard.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				0FC5FFBD2905D01800E7A526 /* WelcomeScreen-ViewModel.swift in Sources */,
 				0FD2FB1B2910069E00E4A357 /* NavigationService.swift in Sources */,
 				0FC7972D2930C70B00E2CEF0 /* ProgressViewOverlay.swift in Sources */,
+				0FB42D1729645CB1008235DD /* ErrorCard.swift in Sources */,
 				0FD2FB13290FF60200E4A357 /* WaitingScreen-ViewModel.swift in Sources */,
 				0F7F6042292E93D0002D54A6 /* DynamicForegoundColor.swift in Sources */,
 				0FC5FFC02905D86000E7A526 /* NetworkService.swift in Sources */,
