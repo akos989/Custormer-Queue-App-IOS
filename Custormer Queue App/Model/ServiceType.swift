@@ -9,5 +9,6 @@ import Foundation
 
 struct ServiceType: Codable, Identifiable, Hashable {
     let id: String
-    let title: String
+    let name: String
+    let handleTime: Int
 }

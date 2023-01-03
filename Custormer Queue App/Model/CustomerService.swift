@@ -9,7 +9,7 @@ import Foundation
 
 struct CustomerService: Decodable, Hashable {
     let name: String
-    var waitingNumber: Int
-    var waitingDuration: Int
+    var waitingPeople: Int
+    var waitingTime: Int?
     let serviceTypes: [ServiceType]
 }

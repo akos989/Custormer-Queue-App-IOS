@@ -10,11 +10,12 @@ import SwiftUI
 @main
 struct Custormer_Queue_AppApp: App {
     @StateObject var navigationService = NavigationService.shared
-    private var customerService = CustomerService(name: "valami", waitingNumber: 23, waitingDuration: 32, serviceTypes: [
-        ServiceType(id: "id1", title: "valmai1"),
-        ServiceType(id: "id2", title: "valmai2"),
-        ServiceType(id: "id3", title: "valmai3"),
-        ServiceType(id: "id4", title: "valmai4"),
+    
+    private var customerService = CustomerService(name: "valami", waitingPeople: 23, waitingTime: 32, serviceTypes: [
+        ServiceType(id: "id1", name: "valmai1", handleTime: 10),
+        ServiceType(id: "id2", name: "valmai2", handleTime: 10),
+        ServiceType(id: "id3", name: "valmai3", handleTime: 10),
+        ServiceType(id: "id4", name: "valmai4", handleTime: 10),
     ])
     
     var body: some Scene {
@@ -25,24 +26,11 @@ struct Custormer_Queue_AppApp: App {
                         switch route {
                             case let .serviceTypes(customerService):
                                 ServiceTypesScreen(customerService: customerService)
-                            case let .waiting(ticket, serviceType):
-                                WaitingScreen(ticket: ticket, serviceType: serviceType)
+                            case let .waiting(ticket, serviceType, needRefresh):
+                                WaitingScreen(ticket: ticket, serviceType: serviceType, needRefresh: needRefresh)
                         }
                     }
             }
         }
     }
-    
-    @ViewBuilder
-    private var startView: some View {
-        let activeTicket: Ticket? = UserDefaults.loadObject(forKey: AppConstants.ACTIVE_TICKET_KEY)
-        let activeServiceType: ServiceType? = UserDefaults.loadObject(forKey: AppConstants.ACTIVE_SERVICETYPE_KEY)
-        
-        if let activeTicket = activeTicket,
-           let activeServiceType = activeServiceType {
-            WaitingScreen(ticket: activeTicket, serviceType: activeServiceType)
-        } else {
-            WelcomeScreen()
-        }
-    }    
 }

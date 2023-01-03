@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Combine
+import UserNotifications
 
 extension WaitingScreen {
     @MainActor class ViewModel: ObservableObject {
@@ -14,96 +14,135 @@ extension WaitingScreen {
         @Published var serviceType: ServiceType
         @Published var isShowingDelaySheet = false
         @Published var isShowingAlert = false
-        
-        private var timer: Timer.TimerPublisher?
-        private var connectedTimer: Cancellable?
-        private var timerCancellable = Set<AnyCancellable>()
+        @Published var remainingMinutes: Int?
+        @Published var isLoading = false
+        @Published var loadingMessage = ""
                 
-        init(ticket: Ticket, serviceType: ServiceType) {
+        init(ticket: Ticket, serviceType: ServiceType, needRefresh: Bool) {
             self.ticket = ticket
             self.serviceType = serviceType
+            calculateRemainingTime()
+            if needRefresh {
+                fetchTicket()
+            }
         }
         
-        func initializeView() {
-            startCountdownTimer()
-            setupWebsocketConnection()
+        func calculateRemainingTime() {
+            Task { @MainActor in
+                if let callTime = ticket.callTime {
+                    let dateDifferance = Calendar.current.dateComponents([.minute], from: Date(), to: callTime)
+                    remainingMinutes = dateDifferance.minute
+                    
+                    if let remainingMinutes = remainingMinutes {
+                        if remainingMinutes > 5 * 60 {
+                            scheduleLocalNotificationAfter(minutes: Double(remainingMinutes - 5), title: "5 minutes left till call", subtitle: "Your ticket is soon being called, please update the time in the application to see exact call time.", notificationId: "9d8d3a5f-505f-4dd8-927d-40dc919705cd")
+                        }
+                        if remainingMinutes > 0 {
+                            scheduleLocalNotificationAfter(minutes: Double(remainingMinutes), title: "Ticket time is up", subtitle: "Your ticket is being called, go to the given desk.", notificationId: "c2f4f569-0dbd-48cc-9413-d857eeebb6f6")
+                        }
+                    }
+                } else {
+                    remainingMinutes = nil
+                }
+            }
         }
         
         func delayCallWith(minutes: Int) {
+            isLoading = true
+            loadingMessage = "We are trying to delay your ticket"
             Task { @MainActor in
                 do {
-                    let _ = try await NetworkService.delayCallWith(ticketId: ticket.id, minutes: minutes)
-                    ticket = .init(id: "id3", number: "3131", waitingTime: ticket.waitingTime + minutes, waitingNumber: ticket.waitingNumber + 3, deskNumber: nil)
-                } catch {
-                    print("Error while delaying ticket: \(error.localizedDescription)")
+                    let delayedTicket = try await NetworkService.delayCallWith(ticketId: ticket.id, minutes: minutes)
+                    isLoading = false
+                    ticket = delayedTicket
+                    calculateRemainingTime()
+                } catch AppError.serverError(let message), AppError.badRequest(let message), AppError.urlError(let message), AppError.unknown(let message) {
+                    isLoading = false
+                    ErrorHandlerService.shared.errorMessages.append(message)
                 }
             }
         }
         
         func cancelTicket() {
-            UserDefaults.standard.removeObject(forKey: AppConstants.ACTIVE_TICKET_KEY)
-            UserDefaults.standard.removeObject(forKey: AppConstants.ACTIVE_SERVICETYPE_KEY)
-            UserDefaults.standard.removeObject(forKey: AppConstants.TIMER_START_DATE_KEY)
-            
-            NavigationService.shared.goToHomePage()
-        }
-
-        func startCountdownTimer() {
-            if timer == nil {
-                if let previousStartDate: Date = UserDefaults.loadObject(forKey: AppConstants.TIMER_START_DATE_KEY),
-                   var previousStartTicket: Ticket = UserDefaults.loadObject(forKey: AppConstants.ACTIVE_TICKET_KEY) {
-                    let currentDate = Date()
-                    let diffComponents = Calendar.current.dateComponents([.minute, .second], from: previousStartDate, to: currentDate)
-                    
-                    if let minutes = diffComponents.minute,
-                       let seconds = diffComponents.second {
-                        print("minutes: \(minutes), seconds: \(seconds)")
-                        previousStartTicket.waitingTime -= minutes + (seconds > 30 ? 1 : 0)
-                    }
-                    ticket = previousStartTicket
-                }
-                
+            isLoading = true
+            loadingMessage = "Cancalling your ticket..."
+            Task { @MainActor in
                 do {
-                    try UserDefaults.saveObject(value: ticket, forKey: AppConstants.ACTIVE_TICKET_KEY)
-                    try UserDefaults.saveObject(value: Date(), forKey: AppConstants.TIMER_START_DATE_KEY)
-                } catch {
-                    print("error while saving to user default: \(error.localizedDescription)")
+                    try await NetworkService.cancelTicket(ticketId: ticket.id)
+                    isLoading = false
+                    UserDefaults.standard.removeObject(forKey: AppConstants.ACTIVE_TICKET_KEY)
+                    UserDefaults.standard.removeObject(forKey: AppConstants.ACTIVE_SERVICETYPE_KEY)
+                    UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                    NavigationService.shared.goToHomePage()
+                }  catch AppError.serverError(let message), AppError.badRequest(let message), AppError.urlError(let message), AppError.unknown(let message) {
+                    isLoading = false
+                    ErrorHandlerService.shared.errorMessages.append(message)
                 }
-                
-                let tempTimer = Timer.publish(every: 60, tolerance: 2, on: .main, in: .common)
-                tempTimer
-                    .sink { [ weak self ] date in
-                        self?.ticket.waitingTime -= 1
-                        print("timer fired: \(date)")
-                    }
-                    .store(in: &timerCancellable)
-                connectedTimer = tempTimer.connect()
-
-                timer = tempTimer
             }
         }
         
-        func stopTimer() {
-            timerCancellable.removeAll()
-            connectedTimer?.cancel()
-            timer = nil
+        func fetchTicket() {
+            isLoading = true
+            loadingMessage = "Refreshing your ticket..."
+            Task { @MainActor in
+                do {
+                    isLoading = false
+                    ticket = try await NetworkService.fetchTicket(ticketId: ticket.id)
+                    calculateRemainingTime()
+                    saveToUserDefault()
+                }  catch AppError.serverError(let message), AppError.badRequest(let message), AppError.urlError(let message), AppError.unknown(let message) {
+                    isLoading = false
+                    UserDefaults.standard.removeObject(forKey: AppConstants.ACTIVE_TICKET_KEY)
+                    UserDefaults.standard.removeObject(forKey: AppConstants.ACTIVE_SERVICETYPE_KEY)
+                    NavigationService.shared.goToHomePage()
+                    ErrorHandlerService.shared.errorMessages.append(message)
+                } catch {
+                    ErrorHandlerService.shared.errorMessages.append("Unknown error occured")
+                }
+            }
         }
+        
+        func saveToUserDefault() {
+            do {
+                try UserDefaults.saveObject(value: ticket, forKey: AppConstants.ACTIVE_TICKET_KEY)
+            } catch {
+                ErrorHandlerService.shared.errorMessages.append("Could not save refreshed ticket to local storage")
+            }
+        }
+        
+        func scheduleLocalNotificationAfter(minutes: Double, title: String, subtitle: String, notificationId: String) {
+            let center = UNUserNotificationCenter.current()
+            
+            let addRequest = {
+                let content = UNMutableNotificationContent()
+                content.title = title
+                content.subtitle = subtitle
+                content.sound = UNNotificationSound.default
                 
-        func setupWebsocketConnection() {
-            // Todo
-        }
-        
-        func recieveMessageFromWebsocket() {
-            //
-        }
-        
-        func closeWebsocketConnection() {
-            // Todo
-        }
-        
-        deinit {
-            // closeWebsocketConnection()
-            print("View is deinited")
+                // show this notification five seconds from now
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: minutes, repeats: false)
+                
+                // choose a random identifier
+                let request = UNNotificationRequest(identifier: notificationId, content: content, trigger: trigger)
+                
+                // add our notification request
+                UNUserNotificationCenter.current().add(request)
+            }
+            
+            center.getNotificationSettings { settings in
+                if settings.authorizationStatus == .authorized {
+                    addRequest()
+                } else {
+                    center.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                        if success {
+                            addRequest()
+                        } else {
+                            print("D'oh")
+                        }
+                    }
+                }
+            }
+            
         }
     }
 }

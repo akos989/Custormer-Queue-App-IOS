@@ -37,6 +37,7 @@ struct CardView: View {
             if !bottomText.isEmpty {
                 Spacer()
                 Text(bottomText)
+                    .multilineTextAlignment(.center)
                     .foregroundColor(.black.opacity(0.7))                
             }
         }

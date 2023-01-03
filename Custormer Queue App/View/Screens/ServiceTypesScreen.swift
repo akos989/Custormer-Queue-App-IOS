@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ServiceTypesScreen: View {
     @StateObject private var viewModel: ViewModel
+    @StateObject var errorHandlerService = ErrorHandlerService.shared
     
     let columns = [
         GridItem(.adaptive(minimum: 150))
@@ -16,7 +17,6 @@ struct ServiceTypesScreen: View {
     
     init(customerService: CustomerService) {
         _viewModel = StateObject(wrappedValue: ViewModel(customerService: customerService))
-        print("servicetype screen init")
     }
     
     var body: some View {
@@ -25,17 +25,21 @@ struct ServiceTypesScreen: View {
                 ScrollView {
                     VStack {
                         Text("Number of people waiting")
-                        Text("\(viewModel.customerService.waitingNumber)")
+                        Text("\(viewModel.customerService.waitingPeople)")
                             .font(.title)
                         Text("Approximate waiting time")
-                        Text("\(viewModel.customerService.waitingDuration) minutes")
-                            .font(.title)
+                        if let waitingTime = viewModel.customerService.waitingTime {
+                            Text("\(waitingTime) minutes")
+                                .font(.title)
+                        } else {
+                            Text("could not be calculated")
+                        }
                     }
                     Divider()
                     LazyVGrid(columns: columns) {
                         ForEach(viewModel.customerService.serviceTypes) { serviceType in
                             VStack {
-                                CardView(title: serviceType.title)
+                                CardView(title: serviceType.name, bottomText: "Average handle time is \(serviceType.handleTime) minutes")
                                     .onTapGesture {
                                         viewModel.tap(serviceType: serviceType)
                                     }
@@ -67,7 +71,7 @@ struct ServiceTypesScreen: View {
                                 }
                             } preview: {
                                 VStack {
-                                    CardView(title: serviceType.title)
+                                    CardView(title: serviceType.name, bottomText: "Average handle time is \(serviceType.handleTime)")
                                         .padding()
                                 }
                                 .frame(width: 400)
@@ -78,12 +82,10 @@ struct ServiceTypesScreen: View {
                 }
                 Button {
                     viewModel.selectServiceType()
-//                        let ticket = Ticket(id: "some", number: "3333", waitingTime: 33, waitingNumber: 2, deskNumber: nil)
-//                        paths.goToWaitingScreen(ticket: ticket, serviceType: ServiceType(id: "id", title: "sdf id is good"))
                 } label:{
                     HStack(spacing: .zero) {
                         Text("Choose ")
-                        Text(viewModel.selectedServiceType?.title ?? "")
+                        Text(viewModel.selectedServiceType?.name ?? "")
                             .font(.headline.bold())
                             .padding(.trailing)
                         Image(systemName: "arrow.right")
@@ -99,12 +101,15 @@ struct ServiceTypesScreen: View {
                 .animation(.easeOut(duration: 0.1), value: viewModel.selectedServiceType)
             }
         }
+        .errorHandler(errorMessages: $errorHandlerService.errorMessages)
+        .progressViewOverlay(showingProgess: viewModel.isLoading, title: "Creating ticket...")
         .navigationTitle(viewModel.customerService.name)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct ServiceTypesScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ServiceTypesScreen(customerService: CustomerService(name: "Vodafone", waitingNumber: 12, waitingDuration: 43, serviceTypes: []))
+        ServiceTypesScreen(customerService: CustomerService(name: "Vodafone", waitingPeople: 12, waitingTime: 43, serviceTypes: []))
     }
 }

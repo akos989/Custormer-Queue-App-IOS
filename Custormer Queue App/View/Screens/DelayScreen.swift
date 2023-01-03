@@ -21,18 +21,12 @@ struct DelayScreen: View {
                     }
                 }
             } header: {
-                Text("How many minutes do you want to delay your call?")
+                Text("How many minutes do you want to delay your call? It may add more time to your ticket than requested!")
             }
             Button("Delay call") {
                 viewModel.delayCallWith(minutes: delayTime)
                 dismiss()
             }
         }
-    }
-}
-
-struct DelayScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        DelayScreen(viewModel: WaitingScreen.ViewModel(ticket: Ticket(id: "id2", number: "sd", waitingTime: 19, waitingNumber: 3, deskNumber: nil), serviceType: ServiceType(id: "id1", title: "Some task")))
     }
 }

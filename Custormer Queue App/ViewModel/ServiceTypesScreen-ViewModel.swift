@@ -12,6 +12,7 @@ extension ServiceTypesScreen {
     @MainActor class ViewModel: ObservableObject {
         @Published var customerService: CustomerService
         @Published var selectedServiceType: ServiceType?
+        @Published var isLoading = false
         
         init(customerService: CustomerService) {
             self.customerService = customerService
@@ -27,14 +28,16 @@ extension ServiceTypesScreen {
         
         func selectServiceType() {
             guard let selectedServiceType = selectedServiceType else { return }
-            
+            isLoading = true
             Task {
                 do {
                     let ticket = try await NetworkService.getTicketForService(serviceTypeId: selectedServiceType.id)
                     saveToUserDefault(ticket: ticket, serviceType: selectedServiceType)
+                    isLoading = false
                     NavigationService.shared.goToWaitingScreen(ticket: ticket, serviceType: selectedServiceType)
-                } catch {
-                    print("Error while fetching ticket: \(error.localizedDescription)")
+                } catch AppError.serverError(let message), AppError.badRequest(let message), AppError.urlError(let message), AppError.unknown(let message) {
+                    isLoading = false
+                    ErrorHandlerService.shared.errorMessages.append(message)
                 }
             }
         }

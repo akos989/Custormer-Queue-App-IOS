@@ -1,7 +1,7 @@
 {
-    "id": "aa5b34bb-07b2-4aa4-abe3-3173b69696c2",
-    "number": "2312",
-    "waitingNumber": 0,
-    "waitingTime": 0,
-    "deskNumber": 22
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "serviceTypeName": "string",
+    "waitingPeopleNumber": 10,
+    "callTime": "2022-11-23T18:16:35.009+00:00",
+    "handleDesk": 12
 }

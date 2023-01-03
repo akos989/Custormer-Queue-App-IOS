@@ -3,4 +3,164 @@
    uuid = "40DE023B-D5E5-4528-8123-66806DACDEE1"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE2D64D9-D679-4BF6-9146-90B7B1FD074E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Custormer Queue App/Service/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "verifyResponse(data:response:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "906F8F81-2512-4D4F-9FB0-323442E3DCAA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Custormer Queue App/Service/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "fetchTicket(ticketId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "29AD31BC-A887-491F-8B2D-88476E55BE3D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Custormer Queue App/Service/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "fetchTicket(ticketId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "29AD31BC-A887-491F-8B2D-88476E55BE3D - 8a6bf58f9110c0b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static Custormer_Queue_App.NetworkService.fetchTicket(ticketId: Swift.String) async throws -&gt; Custormer_Queue_App.Ticket"
+                  moduleName = "Custormer Queue App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/morvaiakos/XCode/Custormer%20Queue%20App/Custormer%20Queue%20App/Service/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "668">
+               </Location>
+               <Location
+                  uuid = "29AD31BC-A887-491F-8B2D-88476E55BE3D - 571ea01d293ffe1d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for static Custormer_Queue_App.NetworkService.fetchTicket(ticketId: Swift.String) async throws -&gt; Custormer_Queue_App.Ticket"
+                  moduleName = "Custormer Queue App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/morvaiakos/XCode/Custormer%20Queue%20App/Custormer%20Queue%20App/Service/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "29AD31BC-A887-491F-8B2D-88476E55BE3D - d919edc9454248be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static Custormer_Queue_App.NetworkService.fetchTicket(ticketId: Swift.String) async throws -&gt; Custormer_Queue_App.Ticket"
+                  moduleName = "Custormer Queue App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/morvaiakos/XCode/Custormer%20Queue%20App/Custormer%20Queue%20App/Service/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "29AD31BC-A887-491F-8B2D-88476E55BE3D - f14ee915eead34b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for static Custormer_Queue_App.NetworkService.fetchTicket(ticketId: Swift.String) async throws -&gt; Custormer_Queue_App.Ticket"
+                  moduleName = "Custormer Queue App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/morvaiakos/XCode/Custormer%20Queue%20App/Custormer%20Queue%20App/Service/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9CCDC917-30DC-4B60-B196-DAFAD9B6D3FA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Custormer Queue App/Service/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "verifyResponse(data:response:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B15AEEC0-5550-4A7A-82AF-1F6456007350"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Custormer Queue App/ViewModel/WaitingScreen-ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "scheduleLocalNotificationAfter(minutes:title:subtitle:notificationId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0C202DAF-7372-4D1D-BEF7-2BBB8E1C2AAB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Custormer Queue App/ViewModel/WaitingScreen-ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "scheduleLocalNotificationAfter(minutes:title:subtitle:notificationId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

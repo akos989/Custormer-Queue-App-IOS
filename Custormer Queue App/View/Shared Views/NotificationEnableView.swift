@@ -34,8 +34,6 @@ struct NotificationEnableView: View {
                         }
                     }
                 default:
-//                    Image(systemName: "bell.fill")
-//                        .foregroundColor(.blue)
                     Text("Notifications are turned on")
                         .font(.caption.weight(.light))
             }
@@ -57,7 +55,6 @@ struct NotificationEnableView: View {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             if success {
                 print("All set!")
-                //                                notific?ationsEnabled = true
             } else if let error = error {
                 print(error.localizedDescription)
             }
@@ -66,7 +63,6 @@ struct NotificationEnableView: View {
     
     private func openAppNotificationSettings() {
         if let url = URL(string: UIApplication.openNotificationSettingsURLString) {
-            // Ask the system to open that URL.
             Task { @MainActor in
                 await UIApplication.shared.open(url)
             }

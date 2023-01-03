@@ -9,8 +9,9 @@ import Foundation
 
 struct Ticket: Codable, Identifiable, Hashable {
     let id: String
-    let number: String
-    var waitingTime: Int
-    var waitingNumber: Int
-    var deskNumber: Int?
+    let serviceTypeName: String
+    let ticketNumber: Int
+    var callTime: Date?
+    var waitingPeopleNumber: Int
+    var handleDesk: Int
 }
