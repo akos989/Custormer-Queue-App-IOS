@@ -15,6 +15,7 @@ This application plans to provide a smart online tool which companies can use to
   - Custom animations
   - URLSession with async/await
   - UserDefaults
+  - REST API communication
 
   
 
